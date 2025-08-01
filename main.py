@@ -8,7 +8,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-
+import tabpfn_client
 
 # Use environment variables
 client = AzureOpenAI(
@@ -20,6 +20,9 @@ client = AzureOpenAI(
 
 # --- TabPFN Setup ---
 TABPFN_API_TOKEN = os.getenv("TABPFN_API_TOKEN")
+
+tabpfn_client.set_access_token(TABPFN_API_TOKEN)
+
 init()
 clf = TabPFNClassifier(api_token=TABPFN_API_TOKEN)
 
