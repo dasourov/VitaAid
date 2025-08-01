@@ -19,8 +19,9 @@ client = AzureOpenAI(
 
 
 # --- TabPFN Setup ---
+TABPFN_API_TOKEN = os.getenv("TABPFN_API_TOKEN")
 init()
-clf = TabPFNClassifier()
+clf = TabPFNClassifier(api_token=TABPFN_API_TOKEN)
 
 
 
